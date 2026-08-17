@@ -17,7 +17,7 @@
 
 默认使用 **Quick**：官网首页、产品页、价格页和有限公开搜索，产出简版报告和下一步验证项。
 
-用户明确要求"完整分析、深入研究、正式报告"，或竞品不超过 3 个时，可进入 **Deep**：在 Quick 来源基础上加入评论、内容、新闻、案例和更新记录，产出完整报告和证据账本。
+只有用户明确要求"完整分析、深入研究、正式报告"时才进入 **Deep**：在 Quick 来源基础上加入评论、内容、新闻、案例和更新记录，产出完整报告和证据账本。竞品数量不超过 3 个只是允许进入 Deep 的前提条件，不会自动触发 Deep。
 
 ## 数据与安全边界
 
@@ -52,11 +52,11 @@ npx skills add https://github.com/jiguang9/competitor-analysis --skill competito
 
 ## 更新
 
-`npx skills add` 是纯文件拷贝（没有 `.git`），因此在部分沙箱环境中 `git pull` 和 `npx` 都可能不可用。用 `update.sh` 代替，只需要 `curl` 或 `wget`：
+`npx skills add` 是纯文件拷贝（没有 `.git`），因此在部分沙箱环境中 `git pull` 和 `npx` 都可能不可用。`update.sh` 随 Skill 一起安装在 Skill 目录内，只需要 `curl` 或 `wget`，且只会覆盖 `skills/competitor-analysis/` 对应的文件：
 
 ```bash
 bash ~/.claude/skills/competitor-analysis/update.sh
-# 根据实际安装路径调整
+# 根据实际安装路径调整；脚本会更新它所在的这个目录
 ```
 
 `update.sh` 会自动选择可用方式：`git pull` → `curl` → `wget`。

@@ -51,10 +51,10 @@ This skill does not depend on sub-agents. If the runtime supports parallel searc
 
 | Depth | When | Default sources | Output |
 |---|---|---|---|
-| Quick (default) | Initial screening, fast orientation | Homepage, product page, pricing page, limited public search | Condensed five-dimension report, key differences, next verification steps |
-| Deep | User explicitly asks for "完整分析/深入研究/正式报告", or 3 or fewer competitors | Quick sources + reviews, content, news, case studies, changelogs | Full five-dimension report, evidence ledger, SWOT, action recommendations |
+| Quick (default) | Anything not explicitly asking for Deep | Homepage, product page, pricing page, limited public search | Condensed five-dimension report, key differences, next verification steps |
+| Deep | User explicitly asks for "完整分析/深入研究/正式报告" (or equivalent — e.g. "deep dive", "formal report") | Quick sources + reviews, content, news, case studies, changelogs | Full five-dimension report, evidence ledger, SWOT, action recommendations |
 
-Default to Quick. Only move to Deep when the user's request or the small competitor count clearly calls for it.
+**Default to Quick.** Move to Deep only on an explicit user request for a complete/deep/formal analysis. A competitor count of 3 or fewer is a *precondition* that makes Deep reasonable to offer or accept if asked — it never auto-triggers Deep by itself. If the user's request is ambiguous about depth, ask a single clarifying question rather than guessing Deep.
 
 ## Mode ① — Full Competitor Analysis
 
@@ -86,7 +86,7 @@ Read `references/sentiment.md` and `references/evidence-protocol.md`.
 
 Follow the sample-size, dedup, source-mixing, and precise-vs-estimated-statistics rules in `references/sentiment.md` exactly — they are the most failure-prone part of this skill.
 
-Output: data range & sample limitations (raw / deduped / invalid counts); sentiment distribution (labeled as exact or estimated); top-3 positive themes; top-3 negative themes with at least 2 anonymized quotes per theme (single-quote themes marked "个案/弱证据"); high-frequency words or themes (exact counts vs. "high-frequency" only, per what's verifiable); user-described workarounds; unmet needs users explicitly stated; 3 differentiation opportunities; what additional data would help next.
+Output: data range & sample limitations (raw = duplicates-removed + other-invalid + valid counts, per `references/sentiment.md`); sentiment distribution (labeled as exact or estimated, and its three categories must sum to the valid count); top-3 positive themes; top-3 negative themes with at least 2 anonymized quotes per theme (single-quote themes marked "个案/弱证据"); high-frequency words or themes (exact counts vs. "high-frequency" only, per what's verifiable); user-described workarounds; unmet needs users explicitly stated; 3 differentiation opportunities; what additional data would help next.
 
 ## Mode ③ — Content Reverse-Engineering
 
