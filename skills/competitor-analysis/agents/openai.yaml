@@ -1,0 +1,4 @@
+interface:
+  display_name: "Competitor Analysis"
+  short_description: "Evidence-based competitor research and sentiment analysis"
+  default_prompt: "Use competitor-analysis to research [competitor names] against [our brand]."
