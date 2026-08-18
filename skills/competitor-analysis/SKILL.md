@@ -64,19 +64,22 @@ This skill only assumes generic agent capabilities — web search, web page fetc
 
 Triggers: "分析竞品X"、"做一份竞品分析报告"、"为什么竞品卖得好"、"对比我们和这些竞品"、"competitive intelligence".
 
-Minimum input: our brand/product/positioning, competitor names or URLs (up to 3), and the purpose of the analysis.
+**Minimum input: competitor name(s) or URL(s) (up to 3). That's the only blocking requirement.** Our brand/positioning and the analysis purpose are optional context, not questions to ask up front:
+
+- **Our brand/positioning** — if the user already gave it (in this message or a saved `config.md`), use it to build the comparison and gap analysis. If not, don't ask "你自己的品牌/产品是什么" as a precondition — proceed with a standalone five-dimension competitor profile instead, and close the report with a one-line offer: telling us our brand/positioning would unlock a gap analysis and prioritized actions. Only ask if it's genuinely ambiguous *who* is asking (rare — e.g., the message implies a comparison but names no second party).
+- **Analysis purpose** — if given, use it to weight emphasis (e.g., toward D3 for a pricing decision). If not given, default to full five-dimension coverage — don't make the user pick one purpose from a list; comprehensive is the sensible default, not a blocker.
 
 Read `references/competitor-set.md`, `references/dimensions.md`, `references/data-sources.md`, `references/evidence-protocol.md`, `references/action-priority.md`.
 
 Flow:
-1. Clarify our product and the analysis goal.
+1. Note what's given (our brand, purpose) and what's defaulting (full five-dimension coverage, standalone profile) — don't front-load clarifying questions for either.
 2. Classify the competitor set (direct / substitute / manual workaround / adjacent threat / rule-setter / ecosystem partner) and get user confirmation before deep-diving.
 3. Collect evidence per Quick/Deep rules, keeping the same evidence type for every competitor in the set.
 4. Build the unified comparison table — every competitor answers the same questions; cell status is only 是/否/未知.
 5. Give targeted re-verification to high-risk claims: price, sales volume, market share, funding, customer counts, compliance, exclusive capabilities.
 6. Produce the report and the evidence ledger.
 
-Output: data coverage & missing-evidence summary; competitor set classification; five-dimension comparison table; per-competitor deep dive; verified facts vs. inferences vs. unknowns; evidence-based SWOT; 3 actionable strategies, each with rationale, priority, next minimal verification step, and success metric (see `references/action-priority.md`'s "So What" checklist).
+Output: data coverage & missing-evidence summary; competitor set classification; five-dimension comparison table; per-competitor deep dive; verified facts vs. inferences vs. unknowns; evidence-based SWOT. If our brand/positioning was given: 3 actionable strategies, each with rationale, priority, next minimal verification step, and success metric (see `references/action-priority.md`'s "So What" checklist). If not: skip the "我方" strategy section (there's no "我方" to strategize for) and instead close with the one-line offer described above.
 
 If asked "为什么竞品卖得好" without sales evidence, output only "public signals that may drive purchase" — never assert actual sales figures or causes without evidence.
 

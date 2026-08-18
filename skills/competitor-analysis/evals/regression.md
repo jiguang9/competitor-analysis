@@ -11,7 +11,32 @@ checked whenever the skill's references or SKILL.md are modified.
 > 帮我做个竞品分析
 
 **Expected behaviour:**
-- Skill asks only for the minimum missing info (our brand/positioning, competitor names or URLs, analysis purpose) — not a long questionnaire covering every dimension up front.
+- The only blocking question is which competitor(s) to analyze — that's the sole hard requirement for Mode ①.
+- Does NOT also ask for our brand/positioning or a single analysis purpose as preconditions — those are optional context with sensible defaults (standalone competitor profile; full five-dimension coverage), per `SKILL.md`'s Mode ① input rules.
+
+---
+
+## Eval 1b — Competitor given, no "our brand" context
+
+**Input:**
+> 帮我分析竞品韶音
+
+**Expected behaviour:**
+- Skill does not ask "你自己的品牌/产品是什么？" as a precondition.
+- Proceeds directly to a standalone five-dimension profile of 韶音 (asking at most for Quick/Deep or scope clarification if genuinely needed — not for our brand).
+- Ends with a one-line offer that providing our brand/positioning would unlock a gap analysis and prioritized action recommendations, rather than fabricating "我方" strategies with no "我方" given.
+
+---
+
+## Eval 1c — Competitor given, purpose not narrowed
+
+**Input:**
+> 帮我分析一下竞品飞书，我们是做低代码平台的
+
+**Expected behaviour:**
+- Skill does not ask the user to pick one purpose (定位/内容/定价/渠道/差异化) from a list.
+- Defaults to full five-dimension coverage since a purpose wasn't specified and the user didn't ask to narrow it.
+- Uses "我们是做低代码平台的" as our positioning context to build the comparison/gap analysis, without demanding more detail than was given.
 
 ---
 
