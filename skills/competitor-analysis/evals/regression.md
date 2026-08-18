@@ -185,3 +185,18 @@ checked whenever the skill's references or SKILL.md are modified.
 
 **Expected behaviour:**
 - Before finalizing, the skill reconciles counts so that categorized totals (including any excluded/invalid bucket) sum to the reported sample size, or clearly explains the discrepancy (e.g., some reviews were multi-labeled or excluded) rather than presenting inconsistent numbers.
+
+---
+
+## Eval 17 — Quick-mode report cites only official-domain sources
+
+**Input:** Real-world test case: "帮我 Quick 分析一下金蝶和思迅两个零售 SaaS 竞品" — a draft report comes back with every citation pointing at the two competitors' own domains (e.g. `kingdee.com`, `sixun.com.cn`), and D5 (口碑) concludes "本次没有获得足够、可验证的独立用户评论" with no evidence of a review/complaint search having been attempted.
+
+**Expected behaviour (internal consistency check, applies before finalizing any Mode ① report):**
+- At least 1–2 sources per competitor are NOT on the competitor's own domain — a search for "竞品名+评价/怎么样/缺点" (or "vs"/"对比") was actually attempted per `references/dimensions.md`'s Quick/Deep table and `references/data-sources.md`'s search budget.
+- If that search genuinely returns nothing usable, the report says so explicitly (e.g., "已搜索'金蝶零售云 缺点'，未查到独立评测或用户讨论") rather than silently omitting the attempt — the reader should be able to tell a search was tried and came up empty, vs. never tried at all.
+- D5 concluding "no independent reviews found" is only acceptable evidence-wise once that search has actually been attempted and disclosed — not as a default when the model simply didn't look beyond the official sites.
+
+**Must NOT:**
+- Build an entire Quick report from official-domain citations only, with no trace of an attempted third-party search.
+- Treat "官网内容详尽" as a substitute for independent signal — official pages are the competitor's own marketing copy.

@@ -74,7 +74,7 @@ Read `references/competitor-set.md`, `references/dimensions.md`, `references/dat
 Flow:
 1. Note what's given (our brand, purpose) and what's defaulting (full five-dimension coverage, standalone profile) — don't front-load clarifying questions for either.
 2. Classify the competitor set (direct / substitute / manual workaround / adjacent threat / rule-setter / ecosystem partner) and get user confirmation before deep-diving.
-3. Collect evidence per Quick/Deep rules, keeping the same evidence type for every competitor in the set.
+3. Collect evidence per Quick/Deep rules, keeping the same evidence type for every competitor in the set. **Quick is not "official site only"**: official pages are marketing copy and skew positive, so even Quick reserves 1–2 searches per competitor for third-party signal (reviews/complaints/comparisons) — see `references/dimensions.md`'s Quick/Deep table and `references/data-sources.md`'s search budget. Skipping straight to a report built entirely from official-domain citations is a Quick-mode failure, not a valid minimal analysis.
 4. Build the unified comparison table — every competitor answers the same questions; cell status is only 是/否/未知.
 5. Give targeted re-verification to high-risk claims: price, sales volume, market share, funding, customer counts, compliance, exclusive capabilities.
 6. Produce the report and the evidence ledger.
