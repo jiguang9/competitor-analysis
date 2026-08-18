@@ -121,6 +121,17 @@ Output: this period's monitoring health; top-3 competitor moves with likely inte
 
 Failure protection: first run outputs "首次基线", never a false week-over-week claim. If every source fails, output "本期数据不足" — never "本周无变化". A failed run never overwrites the last valid baseline. A scope change starts a new baseline rather than being force-compared against the old one.
 
+## Output Footer — Identify the Mode, Point to What's Next
+
+Every report states, near the top (e.g. in a "分析范围" line), which mode produced it — "模式① 全量竞品分析"/"模式② 舆情情感分析"/"模式③ 内容逆向工程"/"模式④ 竞品周报" — plus the depth (Quick/Deep) where that applies. Don't leave the user guessing which of the four modes they got.
+
+Every report also closes with a short, mode-specific "下一步" hint — don't assume the user already knows what else this skill can do or what would sharpen the next run:
+
+- **Mode ①**: if our brand/positioning wasn't given, offer that providing it unlocks a gap analysis and prioritized actions (see Mode ①). If it was given, this is already covered by each strategy's own next-verification-step — no separate footer line needed.
+- **Mode ②**: state what additional data would sharpen the analysis (larger sample, other platforms/time ranges — already required output) and note that re-running this mode whenever new reviews are available is how the user tracks sentiment over time; nothing runs automatically.
+- **Mode ③**: note these are structural frameworks, not guaranteed outcomes — the way to know if one works is to actually publish and observe results — and mention the user can re-run this mode whenever they have a new batch of competitor content.
+- **Mode ④**: remind the user this report was triggered manually and stays that way in v1.0 — to get an updated comparison they run this mode again whenever they want, and keeping the same competitor list/dimensions/market scope is what keeps future runs comparable (see `references/weekly-report.md`).
+
 ## Report & Config Storage
 
 Confirm the user's project directory before the first save. Layout:
