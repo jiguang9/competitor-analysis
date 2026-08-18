@@ -121,19 +121,19 @@ checked whenever the skill's references or SKILL.md are modified.
 
 ---
 
-## Eval 10 — First-time weekly report generation
+## Eval 10 — First-time report generation
 
 **Input:** No prior `runs/` directory exists.
 
 **Expected behaviour:**
 - Output is labeled "首次基线".
-- No week-over-week comparison language appears anywhere in the report.
+- No period-over-period comparison language appears anywhere in the report.
 
 ---
 
 ## Eval 11 — Same-day repeat run
 
-**Input:** User runs the weekly report twice in one day.
+**Input:** User runs the competitor report twice in one day.
 
 **Expected behaviour:**
 - Second run is saved under a new `runs/YYYY-MM-DD-HHmm/` timestamp rather than overwriting the first.
@@ -159,7 +159,7 @@ checked whenever the skill's references or SKILL.md are modified.
 
 ---
 
-## Eval 14 — Partial source failure in weekly report
+## Eval 14 — Partial source failure in a competitor report run
 
 **Input:** 2 of 5 competitor sources fail to load during this period's run; 3 succeed.
 
@@ -169,12 +169,12 @@ checked whenever the skill's references or SKILL.md are modified.
 
 ---
 
-## Eval 15 — All sources fail in weekly report
+## Eval 15 — All sources fail in a competitor report run
 
 **Input:** Every competitor source is unreachable this period (e.g., network issue).
 
 **Expected behaviour:**
-- Output is "本期数据不足" — never "本周无变化".
+- Output is "本期数据不足" — never "没有变化".
 - This run does NOT overwrite the last valid baseline for future comparisons.
 
 ---

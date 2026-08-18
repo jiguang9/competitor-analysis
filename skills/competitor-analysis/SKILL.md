@@ -4,8 +4,8 @@ description: >-
   Evidence-based competitor analysis for brands, products, and marketing teams.
   Use when the user wants competitor research, competitive intelligence,
   competitor monitoring reports, brand or competitor sentiment analysis,
-  competitor content audits, positioning gaps, competitor weekly reports,
-  竞品分析、竞品情报、竞品周报、竞品舆情、竞品内容分析、竞品为什么卖得好。
+  competitor content audits, positioning gaps, competitor reports,
+  竞品分析、竞品情报、竞品报告、竞品舆情、竞品内容分析、竞品为什么卖得好。
   Supports public web sources and user-provided comments or content.
   Do not use for ordinary consumer product comparisons or unrelated public-opinion analysis.
 ---
@@ -15,7 +15,7 @@ description: >-
 Turn scattered competitor signals into a verifiable, comparable, and repeatable
 Chinese-language intelligence report. This skill covers four modes: full
 competitor analysis, sentiment analysis, content reverse-engineering, and
-competitor weekly reports.
+competitor reports.
 
 ## Security Boundaries
 
@@ -107,23 +107,23 @@ Flow: separate content facts from expression style from performance inference �
 
 Output: viral structure patterns; topic/content-type distribution; how content maps to user pain points; topic-gap list with evidence strength per gap; 3 "same structure, different angle" content frameworks; content patterns explicitly NOT worth imitating.
 
-## Mode ④ — Competitor Weekly Report
+## Mode ④ — Competitor Report
 
-Triggers: "生成竞品周报"、"本周竞品有什么变化"、"更新上次竞品报告".
+Triggers: "生成竞品报告"、"本期竞品有什么变化"、"更新上次竞品报告".
 
-This report is run **manually by the user**. v1.0 has no background scheduling or notifications — "weekly" describes the report's cadence, not an automated process.
+This report is run **manually by the user**, whenever they want an updated comparison. v1.0 has no background scheduling or notifications.
 
-Read `references/weekly-report.md` and `references/action-priority.md`.
+Read `references/report.md` and `references/action-priority.md`.
 
 Flow: read config and the most recent scope-compatible historical report → verify competitor list, tracked dimensions, and market scope still match (if not, start a new baseline) → collect this period's public info → record each source as success / fetch-failed / login-or-paywall-blocked / not-found → compare against the last **valid** baseline → filter noise (duplicate info, meaningless page diffs) before doing strategic analysis → generate the report → only a valid run becomes the next baseline.
 
-Output: current run's verification date, last valid baseline's date, and the actual elapsed days between them (there's no fixed schedule — never assume or imply exactly one week; see `references/weekly-report.md`); this period's monitoring health; top-3 competitor moves with likely intent; changes vs. last period (or "首次基线" if none); 2 impacts on us; 2 recommended actions; 跟/缓/不跟 verdict; items to verify; sources that failed.
+Output: current run's verification date, last valid baseline's date, and the actual elapsed days between them (there's no fixed schedule — never assume or imply exactly one week; see `references/report.md`); this period's monitoring health; top-3 competitor moves with likely intent; changes vs. last period (or "首次基线" if none); 2 impacts on us; 2 recommended actions; 跟/缓/不跟 verdict; items to verify; sources that failed.
 
-Failure protection: first run outputs "首次基线", never a false week-over-week claim. If every source fails, output "本期数据不足" — never "本周无变化". A failed run never overwrites the last valid baseline. A scope change starts a new baseline rather than being force-compared against the old one.
+Failure protection: first run outputs "首次基线", never a false period-over-period claim. If every source fails, output "本期数据不足" — never "没有变化". A failed run never overwrites the last valid baseline. A scope change starts a new baseline rather than being force-compared against the old one.
 
 ## Output Footer — Identify the Mode, Point to What's Next
 
-Every report states, near the top (e.g. in a "分析范围" line), which mode produced it — "模式① 全量竞品分析"/"模式② 舆情情感分析"/"模式③ 内容逆向工程"/"模式④ 竞品周报" — plus the depth (Quick/Deep) where that applies. Don't leave the user guessing which of the four modes they got.
+Every report states, near the top (e.g. in a "分析范围" line), which mode produced it — "模式① 全量竞品分析"/"模式② 舆情情感分析"/"模式③ 内容逆向工程"/"模式④ 竞品报告" — plus the depth (Quick/Deep) where that applies. Don't leave the user guessing which of the four modes they got.
 
 Every report also closes with two things — don't assume the user already knows what else this skill can do or what would sharpen the next run:
 
@@ -132,14 +132,14 @@ Every report also closes with two things — don't assume the user already knows
 - **Mode ①**: if our brand/positioning wasn't given, offer that providing it unlocks a gap analysis and prioritized actions (see Mode ①). If it was given, this is already covered by each strategy's own next-verification-step — no separate line needed.
 - **Mode ②**: state what additional data would sharpen the analysis (larger sample, other platforms/time ranges — already required output) and note that re-running this mode whenever new reviews are available is how the user tracks sentiment over time; nothing runs automatically.
 - **Mode ③**: note these are structural frameworks, not guaranteed outcomes — the way to know if one works is to actually publish and observe results — and mention the user can re-run this mode whenever they have a new batch of competitor content.
-- **Mode ④**: remind the user this report was triggered manually and stays that way in v1.0 — to get an updated comparison they run this mode again whenever they want, and keeping the same competitor list/dimensions/market scope is what keeps future runs comparable (see `references/weekly-report.md`).
+- **Mode ④**: remind the user this report was triggered manually and stays that way in v1.0 — to get an updated comparison they run this mode again whenever they want, and keeping the same competitor list/dimensions/market scope is what keeps future runs comparable (see `references/report.md`).
 
 **2. A short "还能做什么" list of the *other three* modes** (the ones NOT just used), one line each — what it does and what input it needs. Don't repeat the mode that just ran; don't turn this into a sales pitch, one line per mode is enough:
 
 - 模式① 全量竞品分析：给竞品名称/URL（最多3个），可选给我方定位 → 五维度画像或对比 + SWOT。
 - 模式② 舆情情感分析：粘贴/上传竞品评论（建议≥100条）→ 情感分布、正负口碑主题、差异化机会。
 - 模式③ 内容逆向工程：粘贴/上传竞品的爆款内容（文章、笔记、视频文案）→ 结构规律、话题空白、可复用内容框架。
-- 模式④ 竞品周报：直接说"生成竞品周报"，无需额外输入（首次运行会建立基线，之后每次手动重新触发获得环比更新）。
+- 模式④ 竞品报告：直接说"生成竞品报告"，无需额外输入（首次运行会建立基线，之后每次手动重新触发获得环比更新）。
 
 ## Report & Config Storage
 
@@ -170,5 +170,5 @@ Use a timestamp per run so same-day re-runs don't overwrite each other. When com
 | `references/evidence-protocol.md` | fact / inference / unknown, evidence fields, high-risk fact re-verification, evidence strength |
 | `references/sentiment.md` | Sentiment categories, sample bias, dedup, weak evidence, suspected astroturfing, anonymized quoting, exact-vs-estimated statistics |
 | `references/content-reverse.md` | Content structure reverse-engineering, topic gaps, user pain points, KOL analysis, borrow-structure-not-wording |
-| `references/weekly-report.md` | Weekly report template, first baseline, scope compatibility, monitoring health, failure protection, historical comparison |
+| `references/report.md` | Report template, first baseline, scope compatibility, monitoring health, failure protection, historical comparison |
 | `references/action-priority.md` | 跟/缓/不跟 framework, impact, evidence certainty, execution cost, reversibility, next verification metric |

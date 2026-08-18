@@ -19,7 +19,7 @@ benchmarks when updating the skill.
 6. Any cell without solid evidence is marked "未知" — never silently left blank or guessed as "否".
 7. Output includes: data coverage/missing-evidence section, comparison table, evidence-based SWOT, 3 actionable strategies each with rationale/priority/next verification step/success metric.
 8. States near the top that this is "模式① 全量竞品分析 · Quick" — the user shouldn't have to infer which mode ran.
-9. Closes with a one-line-each "还能做什么" list covering modes ②③④ (sentiment, content reverse-engineering, weekly report) and what input each needs — not mode ①, which just ran.
+9. Closes with a one-line-each "还能做什么" list covering modes ②③④ (sentiment, content reverse-engineering, competitor report) and what input each needs — not mode ①, which just ran.
 
 **Must NOT:**
 - Assert specific sales, revenue, or market-share numbers without a cited source.
@@ -103,12 +103,12 @@ benchmarks when updating the skill.
 
 ---
 
-## Eval 4 — Mode ④ Second weekly report run (valid comparison)
+## Eval 4 — Mode ④ Second competitor report run (valid comparison)
 
 **Setup:** `competitor-analysis-reports/config.md` exists with a confirmed competitor list and tracked dimensions. A prior valid run exists at `runs/2026-08-03-0900/` with the same scope.
 
 **Input:**
-> 生成本周的竞品周报
+> 生成本期的竞品报告
 
 **Expected behaviour:**
 1. Skill triggers Mode ④, reads `config.md` and locates the scope-compatible prior run as baseline.
@@ -118,11 +118,11 @@ benchmarks when updating the skill.
 5. Output includes: monitoring health, top-3 competitor moves with intent, changes vs. last period, 2 impacts, 2 recommended actions, 跟/缓/不跟 verdict, items to verify, failed sources.
 6. This run becomes the new baseline only if at least partially valid.
 7. Closes with a reminder that this report was triggered manually and stays that way in v1.0 — to get an updated comparison the user runs this mode again whenever they want, keeping the same competitor list/dimensions/market scope.
-8. States near the top that this is "模式④ 竞品周报".
+8. States near the top that this is "模式④ 竞品报告".
 9. Closes with a one-line-each "还能做什么" list covering modes ①②③ and what input each needs — not mode ④, which just ran.
-10. States near the top the current run's date, the baseline's date (2026-08-03), and the actual elapsed days (15) — does not call this "本周 vs. 上周" as if it were a calendar week, since 15 days ≠ 7 days. Since the gap is well over a week, the monitoring-health section should note that observed changes may reflect accumulated drift rather than one discrete event.
+10. States near the top the current run's date, the baseline's date (2026-08-03), and the actual elapsed days (15) — does not imply this is a calendar week-over-week comparison, since 15 days ≠ 7 days. Since the gap is well over a week, the monitoring-health section should note that observed changes may reflect accumulated drift rather than one discrete event.
 
 **Must NOT:**
-- Output "本周无变化" if some or all sources failed.
+- Output "没有变化" if some or all sources failed.
 - Silently start a new baseline when the scope hasn't changed.
 - Imply or assume the gap between runs is exactly 7 days without stating the actual dates.

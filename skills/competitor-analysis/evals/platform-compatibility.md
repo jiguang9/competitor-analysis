@@ -58,7 +58,7 @@ an installed instance before it can be marked as passing.
 **Input (Mode ② on either platform):** User pastes a batch of reviews and asks for sentiment analysis.
 
 **Expected behaviour:**
-- The skill reads `references/sentiment.md` (and `references/evidence-protocol.md`) for this mode only — not `references/content-reverse.md` or `references/weekly-report.md`, which are unrelated to Mode ②.
+- The skill reads `references/sentiment.md` (and `references/evidence-protocol.md`) for this mode only — not `references/content-reverse.md` or `references/report.md`, which are unrelated to Mode ②.
 - On Hermes, this happens via the documented `skill_view("competitor-analysis", "references/sentiment.md")` progressive-disclosure mechanism.
 - On OpenClaw, there's no separate on-demand reference API documented — the model reads `SKILL.md`, which instructs it to read the specific reference file via its normal file-read tool. The end result (only the relevant reference loaded) should be the same even though the mechanism differs.
 
@@ -91,11 +91,11 @@ an installed instance before it can be marked as passing.
 
 ---
 
-## Eval 6 — Weekly report first run establishes "首次基线" on both platforms
+## Eval 6 — Competitor report first run establishes "首次基线" on both platforms
 
 **Input:** Mode ④ request with no prior `competitor-analysis-reports/` history, run on OpenClaw and Hermes.
 
-**Expected behaviour:** Same as `basic.md`/`regression.md` weekly-report cases — outputs "首次基线", no week-over-week language. Baseline logic lives in `SKILL.md`/`references/weekly-report.md`, not platform code.
+**Expected behaviour:** Same as `basic.md`/`regression.md` report cases — outputs "首次基线", no period-over-period language. Baseline logic lives in `SKILL.md`/`references/report.md`, not platform code.
 
 **Verification method:** static; needs a real run to confirm file read/write behavior works identically (see Eval 9).
 
