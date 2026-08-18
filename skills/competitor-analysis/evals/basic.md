@@ -120,7 +120,9 @@ benchmarks when updating the skill.
 7. Closes with a reminder that this report was triggered manually and stays that way in v1.0 — to get an updated comparison the user runs this mode again whenever they want, keeping the same competitor list/dimensions/market scope.
 8. States near the top that this is "模式④ 竞品周报".
 9. Closes with a one-line-each "还能做什么" list covering modes ①②③ and what input each needs — not mode ④, which just ran.
+10. States near the top the current run's date, the baseline's date (2026-08-03), and the actual elapsed days (15) — does not call this "本周 vs. 上周" as if it were a calendar week, since 15 days ≠ 7 days. Since the gap is well over a week, the monitoring-health section should note that observed changes may reflect accumulated drift rather than one discrete event.
 
 **Must NOT:**
 - Output "本周无变化" if some or all sources failed.
 - Silently start a new baseline when the scope hasn't changed.
+- Imply or assume the gap between runs is exactly 7 days without stating the actual dates.

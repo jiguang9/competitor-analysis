@@ -117,7 +117,7 @@ Read `references/weekly-report.md` and `references/action-priority.md`.
 
 Flow: read config and the most recent scope-compatible historical report → verify competitor list, tracked dimensions, and market scope still match (if not, start a new baseline) → collect this period's public info → record each source as success / fetch-failed / login-or-paywall-blocked / not-found → compare against the last **valid** baseline → filter noise (duplicate info, meaningless page diffs) before doing strategic analysis → generate the report → only a valid run becomes the next baseline.
 
-Output: this period's monitoring health; top-3 competitor moves with likely intent; changes vs. last period (or "首次基线" if none); 2 impacts on us; 2 recommended actions; 跟/缓/不跟 verdict; items to verify; sources that failed.
+Output: current run's verification date, last valid baseline's date, and the actual elapsed days between them (there's no fixed schedule — never assume or imply exactly one week; see `references/weekly-report.md`); this period's monitoring health; top-3 competitor moves with likely intent; changes vs. last period (or "首次基线" if none); 2 impacts on us; 2 recommended actions; 跟/缓/不跟 verdict; items to verify; sources that failed.
 
 Failure protection: first run outputs "首次基线", never a false week-over-week claim. If every source fails, output "本期数据不足" — never "本周无变化". A failed run never overwrites the last valid baseline. A scope change starts a new baseline rather than being force-compared against the old one.
 
