@@ -125,12 +125,21 @@ Failure protection: first run outputs "首次基线", never a false week-over-we
 
 Every report states, near the top (e.g. in a "分析范围" line), which mode produced it — "模式① 全量竞品分析"/"模式② 舆情情感分析"/"模式③ 内容逆向工程"/"模式④ 竞品周报" — plus the depth (Quick/Deep) where that applies. Don't leave the user guessing which of the four modes they got.
 
-Every report also closes with a short, mode-specific "下一步" hint — don't assume the user already knows what else this skill can do or what would sharpen the next run:
+Every report also closes with two things — don't assume the user already knows what else this skill can do or what would sharpen the next run:
 
-- **Mode ①**: if our brand/positioning wasn't given, offer that providing it unlocks a gap analysis and prioritized actions (see Mode ①). If it was given, this is already covered by each strategy's own next-verification-step — no separate footer line needed.
+**1. A mode-specific "下一步" hint**, scoped to the mode that just ran:
+
+- **Mode ①**: if our brand/positioning wasn't given, offer that providing it unlocks a gap analysis and prioritized actions (see Mode ①). If it was given, this is already covered by each strategy's own next-verification-step — no separate line needed.
 - **Mode ②**: state what additional data would sharpen the analysis (larger sample, other platforms/time ranges — already required output) and note that re-running this mode whenever new reviews are available is how the user tracks sentiment over time; nothing runs automatically.
 - **Mode ③**: note these are structural frameworks, not guaranteed outcomes — the way to know if one works is to actually publish and observe results — and mention the user can re-run this mode whenever they have a new batch of competitor content.
 - **Mode ④**: remind the user this report was triggered manually and stays that way in v1.0 — to get an updated comparison they run this mode again whenever they want, and keeping the same competitor list/dimensions/market scope is what keeps future runs comparable (see `references/weekly-report.md`).
+
+**2. A short "还能做什么" list of the *other three* modes** (the ones NOT just used), one line each — what it does and what input it needs. Don't repeat the mode that just ran; don't turn this into a sales pitch, one line per mode is enough:
+
+- 模式① 全量竞品分析：给竞品名称/URL（最多3个），可选给我方定位 → 五维度画像或对比 + SWOT。
+- 模式② 舆情情感分析：粘贴/上传竞品评论（建议≥100条）→ 情感分布、正负口碑主题、差异化机会。
+- 模式③ 内容逆向工程：粘贴/上传竞品的爆款内容（文章、笔记、视频文案）→ 结构规律、话题空白、可复用内容框架。
+- 模式④ 竞品周报：直接说"生成竞品周报"，无需额外输入（首次运行会建立基线，之后每次手动重新触发获得环比更新）。
 
 ## Report & Config Storage
 

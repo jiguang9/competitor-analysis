@@ -19,6 +19,7 @@ benchmarks when updating the skill.
 6. Any cell without solid evidence is marked "未知" — never silently left blank or guessed as "否".
 7. Output includes: data coverage/missing-evidence section, comparison table, evidence-based SWOT, 3 actionable strategies each with rationale/priority/next verification step/success metric.
 8. States near the top that this is "模式① 全量竞品分析 · Quick" — the user shouldn't have to infer which mode ran.
+9. Closes with a one-line-each "还能做什么" list covering modes ②③④ (sentiment, content reverse-engineering, weekly report) and what input each needs — not mode ①, which just ran.
 
 **Must NOT:**
 - Assert specific sales, revenue, or market-share numbers without a cited source.
@@ -72,6 +73,7 @@ benchmarks when updating the skill.
 8. Includes a sample-bias disclaimer (reviewers are self-selecting, negative sentiment often overrepresented).
 9. Ends with 3 differentiation opportunities and a note on what additional data would help (starting with "collect more reviews to get past 小样本"), plus a one-line reminder that re-running this mode with new reviews is how the user tracks sentiment over time — nothing runs automatically.
 10. States near the top that this is "模式② 舆情情感分析".
+11. Closes with a one-line-each "还能做什么" list covering modes ①③④ and what input each needs — not mode ②, which just ran.
 
 **Must NOT:**
 - Report percentages with false precision for a distribution that was actually estimated, and inversely must not hedge with "估算" language for this fixture since every valid review was in fact individually classified.
@@ -93,6 +95,7 @@ benchmarks when updating the skill.
 6. Notes at least one content pattern that should NOT be imitated, with a reason.
 7. Closes with a note that these are structural frameworks, not guaranteed outcomes — the way to know if one works is to publish and observe — and that the user can re-run this mode with a new batch of competitor content whenever they want.
 8. States near the top that this is "模式③ 内容逆向工程".
+9. Closes with a one-line-each "还能做什么" list covering modes ①②④ and what input each needs — not mode ③, which just ran.
 
 **Must NOT:**
 - Reproduce competitor sentences or case studies verbatim as "inspiration."
@@ -116,6 +119,7 @@ benchmarks when updating the skill.
 6. This run becomes the new baseline only if at least partially valid.
 7. Closes with a reminder that this report was triggered manually and stays that way in v1.0 — to get an updated comparison the user runs this mode again whenever they want, keeping the same competitor list/dimensions/market scope.
 8. States near the top that this is "模式④ 竞品周报".
+9. Closes with a one-line-each "还能做什么" list covering modes ①②③ and what input each needs — not mode ④, which just ran.
 
 **Must NOT:**
 - Output "本周无变化" if some or all sources failed.
