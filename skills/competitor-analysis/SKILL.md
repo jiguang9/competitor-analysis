@@ -47,6 +47,10 @@ Run in this order:
 
 This skill does not depend on sub-agents. If the runtime supports parallel searches, use them to speed things up, but never treat multi-agent orchestration as a requirement.
 
+### Platform & Capability Notes
+
+This skill only assumes generic agent capabilities — web search, web page fetch, and file read/write — and is written to run the same way on Claude Code, Codex, OpenClaw, and Hermes Agent (or any other runtime that loads a `SKILL.md` and can read `references/*.md` on demand), without any platform-specific instructions in this file. If a capability is missing in the current session — most commonly no web search/fetch tool configured — say so explicitly, degrade to what's available (e.g., ask the user to paste or upload the material instead of fetching it), and never fabricate a finding to compensate for a missing tool. `agents/openai.yaml` is metadata read by OpenAI-product harnesses only; nothing in this file or its behavior depends on that file existing.
+
 ### Quick vs. Deep
 
 | Depth | When | Default sources | Output |
